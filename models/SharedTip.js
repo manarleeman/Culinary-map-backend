@@ -1,9 +1,27 @@
 const mongoose = require('mongoose');
 
-const sharedTipSchema = new mongoose.Schema({
-  tip: String,
-  submittedBy: String,
-  date: { type: Date, default: Date.now }
+const tipSchema = new mongoose.Schema({
+  title: String,
+  category: String,
+  region: String,
+  difficulty: String,
+  description: String,
+  solution: String,
+  whyItWorks: String,
+  relatedDishes: String,
+  relatedIngredients: String,
+  relatedEquipment: String,
+  experience: String,
+  variations: String,
+  authorName: String,
+  authorEmail: String,
+  cookingExperience: String,
+  credit: String,
+  images: [String],
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-module.exports = mongoose.model('SharedTip', sharedTipSchema);
+module.exports = mongoose.model('Tip', tipSchema);
