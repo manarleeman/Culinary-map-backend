@@ -12,13 +12,13 @@ app.use(express.json());
 const commentRoutes = require('./routes/comments');
 const subscribeRoutes = require('./routes/subscribe');
 const recipeRoutes = require('./routes/shareRecipe');
-const tipRoutes = require('./routes/shareTip');
+const tipRoutes = require('./routes/tipRoutes'); // ✅ this was updated
 const videoRoutes = require('./routes/shareVideo');
 
 app.use('/api/comments', commentRoutes);
 app.use('/api/subscribe', subscribeRoutes);
 app.use('/api/share-recipe', recipeRoutes);
-app.use('/api/share-tip', tipRoutes);
+app.use('/api/share-tip', tipRoutes); // ✅ keep this
 app.use('/api/share-video', videoRoutes);
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
